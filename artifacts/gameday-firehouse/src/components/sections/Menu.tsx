@@ -6,7 +6,7 @@ type MenuCategory = 'tailgate' | 'halftime'
 
 const categories: { id: MenuCategory; label: string; note: string }[] = [
   { id: 'tailgate', label: 'Tailgate Menu', note: 'Available outside before the game' },
-  { id: 'halftime', label: 'Halftime Menu', note: 'Served inside at the bar' },
+  { id: 'halftime', label: 'Halftime Menu', note: 'Served inside at the bar from halftime on' },
 ]
 
 type MenuItem = { name: string; desc: string; price: string }
