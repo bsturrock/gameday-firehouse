@@ -1,0 +1,27 @@
+packages:
+  "framer-motion": "For smooth scroll animations, hero entry effects, and interactive hover states"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility to merge tailwind classes without style conflicts"
+
+images:
+  - path: "artifacts/gameday-firehouse/public/images/hero-bg.png"
+    description: "Dark, moody, atmospheric background with fiery sparks, glowing embers, and subtle smoke on a pure black background. Cinematic sports bar feel."
+    aspect_ratio: "16:9"
+  - path: "artifacts/gameday-firehouse/public/images/bar-atmosphere.png"
+    description: "Moody, dark premium sports bar interior with subtle red and orange neon lights, dark wood textures, and an energetic gameday atmosphere."
+    aspect_ratio: "16:9"
+  - path: "artifacts/gameday-firehouse/public/images/wings-platter.png"
+    description: "Mouth-watering, glossy spicy buffalo chicken wings on a dark slate plate with dramatic moody lighting, accompanied by celery and blue cheese."
+    aspect_ratio: "4:3"
+  - path: "artifacts/gameday-firehouse/public/images/burger.png"
+    description: "Towering gourmet pub burger with melting cheddar cheese, crispy bacon, and fresh lettuce, shot with dark moody lighting on a rustic wooden table."
+    aspect_ratio: "4:3"
+  - path: "artifacts/gameday-firehouse/public/images/draft-beer.png"
+    description: "Frosty, cold craft draft beer glass covered in condensation, dramatic dark lighting, sports bar background blurred out."
+    aspect_ratio: "3:4"
+
+notes:
+  - Static site with hardcoded data based on prompt requirements. No external API integration required.
+  - Used Bebas Neue for display font to give an athletic, bold feel.
+  - Used Montserrat for body text for clean readability.
+  - Applied dark theme as default to match the requested "bold dark sports bar aesthetic".

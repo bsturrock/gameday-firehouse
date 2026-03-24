@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Gameday Firehouse"
+version = "1.0.0"
+id = "artifacts/gameday-firehouse"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25109
+
+[services.development]
+run = "pnpm --filter @workspace/gameday-firehouse run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/gameday-firehouse", "run", "build" ]
+publicDir = "artifacts/gameday-firehouse/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25109"
+BASE_PATH = "/"
