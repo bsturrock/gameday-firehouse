@@ -199,6 +199,13 @@
     animation: flicker 4s infinite alternate;
   }
 
+  button,
+  [role="button"],
+  [type="button"],
+  [type="submit"] {
+    cursor: pointer;
+  }
+
   input[type="search"]::-webkit-search-cancel-button {
     @apply hidden;
   }
