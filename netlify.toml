@@ -1,8 +1,5 @@
 [build]
   command = "npm run build"
   publish = "dist"
-```
 
-**2. `public/_redirects`** — in your `public/` folder:
-```
 /* /index.html 200
