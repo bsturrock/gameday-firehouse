@@ -6,7 +6,7 @@ export function Events() {
   const tailgateInfo = [
     {
       icon: <Clock className="w-7 h-7" />,
-      title: "Opens 4 Hours Early",
+      title: "Opens Early",
       desc: "We open the gates before every Ravens and Orioles home game so you can settle in, grab a cold one, and get fired up.",
       color: "ravens"
     },
