@@ -69,7 +69,7 @@ export function About() {
               />
 
               {/* Floating Badge */}
-              <div className="absolute -bottom-6 -left-6 bg-card border border-border p-6 rounded-xl shadow-xl z-20 hidden md:block">
+              <div className="absolute -bottom-6 -left-6 bg-card border border-border p-6 rounded-xl shadow-xl z-20 hidden md:flex md:items-center md:justify-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary">
                     <MapPin className="w-8 h-8" />
