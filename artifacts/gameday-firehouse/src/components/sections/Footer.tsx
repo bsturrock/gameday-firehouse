@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
           {/* Brand Col */}
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col items-center text-center">
             <div className="w-32">
               <img
                 src={`${import.meta.env.BASE_URL}gd_logo.png`}
@@ -15,10 +15,10 @@ export function Footer() {
                 className="w-full h-auto drop-shadow-lg grayscale contrast-125 brightness-150"
               />
             </div>
-            <p className="text-muted-foreground font-medium pr-4">
+            <p className="text-muted-foreground font-medium">
               Baltimore's home for sports, cold beer, and the best tailgate parties in the city.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center">
               <a href="https://www.facebook.com/GamedayFirehouse/" target="_blank" rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-foreground hover:bg-primary hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
