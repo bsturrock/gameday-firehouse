@@ -1,9 +1,10 @@
 [build]
-  command = "npm install -g pnpm && pnpm install && pnpm --filter @workspace/gameday-firehouse run build"
+  command = "pnpm install && pnpm --filter @workspace/gameday-firehouse run build"
   publish = "artifacts/gameday-firehouse/dist/public"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION  = "20"
+  PNPM_VERSION  = "10"
 
 [[redirects]]
   from   = "/*"
