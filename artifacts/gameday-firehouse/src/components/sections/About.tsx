@@ -69,15 +69,13 @@ export function About() {
               />
 
               {/* Floating Badge */}
-              <div className="absolute -bottom-6 -left-6 bg-card border border-border p-6 rounded-xl shadow-xl z-20 hidden md:flex md:items-center md:justify-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary">
-                    <MapPin className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <p className="font-display text-2xl font-bold uppercase text-white">Steps From</p>
-                    <p className="text-muted-foreground font-medium">Both Stadiums</p>
-                  </div>
+              <div className="absolute -bottom-6 -left-6 bg-card border border-border p-6 rounded-xl shadow-xl z-20 hidden md:flex md:flex-col md:items-center md:justify-center md:text-center gap-3">
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary">
+                  <MapPin className="w-8 h-8" />
+                </div>
+                <div>
+                  <p className="font-display text-2xl font-bold uppercase text-white">Steps From</p>
+                  <p className="text-muted-foreground font-medium">Both Stadiums</p>
                 </div>
               </div>
             </div>
