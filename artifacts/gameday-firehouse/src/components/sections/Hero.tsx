@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { MapPin, Calendar, ArrowDown } from "lucide-react"
+import { MapPin, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
@@ -9,18 +9,29 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background Image & Overlays */}
+      {/* YouTube Video Background */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
-          alt="Gameday Firehouse Atmosphere" 
-          className="w-full h-full object-cover object-center opacity-60"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/90"></div>
-        
-        {/* Subtle animated overlay to enhance the "fire" feel */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,85,0,0.1),transparent_60%)] animate-pulse" style={{ animationDuration: '4s' }}></div>
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+          <iframe
+            src="https://www.youtube.com/embed/qiI-da7aR3A?autoplay=1&mute=1&loop=1&playlist=qiI-da7aR3A&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{
+              width: 'calc(100vw + 200px)',
+              height: 'calc(56.25vw + 120px)',
+              minWidth: '100%',
+              minHeight: '100%',
+              border: 'none',
+              opacity: 0.55,
+            }}
+            title="Gameday Firehouse background"
+          />
+        </div>
+        {/* Overlays to darken and add brand feel */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,85,0,0.08),transparent_60%)] animate-pulse" style={{ animationDuration: '4s' }}></div>
       </div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-6 flex flex-col items-center text-center mt-10">
@@ -33,9 +44,9 @@ export function Hero() {
           {/* Logo */}
           <div className="w-48 md:w-64 lg:w-72 mb-8 relative">
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
-            <img 
-              src={`${import.meta.env.BASE_URL}gd_logo.png`} 
-              alt="Gameday Firehouse" 
+            <img
+              src={`${import.meta.env.BASE_URL}gd_logo.png`}
+              alt="Gameday Firehouse"
               className="w-full h-auto relative z-10 drop-shadow-2xl"
             />
           </div>
@@ -55,9 +66,9 @@ export function Hero() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-[0.9] text-glow tracking-wide">
             WHERE EVERY DAY IS <span className="text-primary">GAMEDAY</span>
           </h1>
-          
+
           <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-10 font-medium">
-            Proud tailgate partners of the <span className="text-[#241773] font-bold">Baltimore Ravens</span> & <span className="text-[#DF4601] font-bold">Orioles</span>. 
+            Proud tailgate partners of the <span className="text-[#241773] font-bold">Baltimore Ravens</span> & <span className="text-[#DF4601] font-bold">Orioles</span>.
             Cold drinks, hot food, and the best sports atmosphere in the city.
           </p>
 
@@ -75,7 +86,7 @@ export function Hero() {
       </div>
 
       {/* Scroll Down Indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
@@ -83,7 +94,7 @@ export function Hero() {
         onClick={scrollToEvents}
       >
         <span className="text-xs font-display tracking-widest">SCROLL</span>
-        <ArrowDown className="w-5 h-5 animate-bounce" />
+        <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
       </motion.div>
     </section>
   )

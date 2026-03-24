@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Calendar, MapPin, Clock, Tv, Heart, Radio } from "lucide-react"
+import { MapPin, Clock, Tv } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
 export function Events() {
@@ -13,19 +13,7 @@ export function Events() {
     {
       icon: <Tv className="w-7 h-7" />,
       title: "Watch Inside If You Don't Have Tickets",
-      desc: "No ticket? No problem. Come inside the Firefighters Union Hall and catch every play on our TVs. Full-service bar, full menu, full game day atmosphere.",
-      color: "orioles"
-    },
-    {
-      icon: <Radio className="w-7 h-7" />,
-      title: "105.7 The Fan Post-Game Show",
-      desc: "After every Ravens home game, 105.7 The Fan broadcasts their post-game show live from the Firehouse. The celebration doesn't stop at the final whistle.",
-      color: "ravens"
-    },
-    {
-      icon: <Heart className="w-7 h-7" />,
-      title: "A Cause Worth Cheering For",
-      desc: "Run by Baltimore Firefighters Local 734. Every dollar of tips and profits goes directly to the Baltimore Firefighters Widows & Orphans Fund.",
+      desc: "No ticket? No problem. Come inside and catch every play on our TVs. Full-service bar, full menu, full game day atmosphere.",
       color: "orioles"
     },
   ]
@@ -37,7 +25,6 @@ export function Events() {
       role: "Official Tailgate Partner",
       stadium: "M&T Bank Stadium",
       color: "from-[#241773] to-[#241773]/80",
-      textColor: "#D2AA4A",
     },
     {
       type: "orioles",
@@ -45,7 +32,6 @@ export function Events() {
       role: "Official Tailgate Partner",
       stadium: "Oriole Park at Camden Yards",
       color: "from-[#DF4601] to-[#DF4601]/80",
-      textColor: "#000000",
     },
   ]
 
@@ -71,8 +57,8 @@ export function Events() {
             Official Tailgate <span className="text-primary">HQ</span>
           </h3>
           <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
-            Baltimore's only official tailgate partner for <strong className="text-[#241773] drop-shadow-[0_0_4px_rgba(210,170,74,0.8)]">both</strong> the Ravens and the Orioles.
-            Steps from both stadiums. Open before, during, and after every home game.
+            Baltimore's only official tailgate partner for <strong className="text-white">both</strong> the Ravens and the Orioles.
+            Steps from both stadiums. Open before and during every home game.
           </p>
         </motion.div>
 
@@ -147,11 +133,6 @@ export function Events() {
             <div className="text-center">
               <p className="text-2xl font-display font-bold text-white">WBAL</p>
               <p className="text-sm text-muted-foreground">1090 AM / 101.5 FM News Radio</p>
-            </div>
-            <div className="w-px h-10 bg-border hidden sm:block"></div>
-            <div className="text-center">
-              <p className="text-2xl font-display font-bold text-white">105.7 The Fan</p>
-              <p className="text-sm text-muted-foreground">Post-game show after every Ravens home game</p>
             </div>
           </div>
         </motion.div>

@@ -1,12 +1,12 @@
 import { motion } from "framer-motion"
-import { Shield, Beer, Flame, Users, MapPin } from "lucide-react"
+import { Shield, Beer, Flame, MapPin } from "lucide-react"
 
 export function About() {
   const stats = [
     { icon: <Beer className="w-8 h-8" />, value: "$3", label: "Cold Beers" },
     { icon: <Shield className="w-8 h-8" />, value: "2", label: "Official Team Partnerships" },
-    { icon: <Users className="w-8 h-8" />, value: "Local 734", label: "Baltimore Firefighters" },
     { icon: <Flame className="w-8 h-8" />, value: "~½", label: "Stadium Prices" },
+    { icon: <MapPin className="w-8 h-8" />, value: "2 Blocks", label: "From the Stadiums" },
   ]
 
   return (
@@ -38,17 +38,15 @@ export function About() {
               <p>
                 Located just steps from M&T Bank Stadium and Oriole Park at Camden Yards at
                 <span className="text-white font-semibold"> 1202 Ridgely St, Baltimore</span>,
-                the Gameday Firehouse is run by <span className="text-white font-semibold">Baltimore Firefighters Local 734</span> — the men and women who protect this city every day.
+                the Gameday Firehouse is Baltimore's most beloved game-day gathering spot.
               </p>
               <p>
-                What started as a Ravens season tradition has grown into Baltimore's most beloved game-day gathering spot.
-                We're the <span className="text-white font-semibold">official tailgate partner of both the Ravens and the Orioles</span>,
+                We're the <span className="text-white font-semibold">official tailgate partner of both the Baltimore Ravens and the Baltimore Orioles</span>,
                 with events running 4 hours before every home game.
               </p>
               <p>
-                Every dollar of tips and profits goes directly to the{" "}
-                <span className="text-primary font-bold">Baltimore Firefighters Widows & Orphans Fund</span>.
-                When you eat and drink here, you're supporting the families of fallen heroes.
+                Whether you're grabbing a cold one before first pitch or joining hundreds of fans
+                for an all-out tailgate with 98Rock and WBAL, the Firehouse is where the game truly begins.
               </p>
             </div>
           </motion.div>

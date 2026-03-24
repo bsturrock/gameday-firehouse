@@ -109,8 +109,7 @@ export function Menu() {
         <div className="mt-16 text-center p-6 rounded-2xl bg-primary/10 border border-primary/20">
           <p className="text-primary font-display text-2xl font-bold">No Admission Charge — Ever</p>
           <p className="text-muted-foreground mt-2 font-medium">
-            All tips and proceeds benefit the{" "}
-            <span className="text-white font-semibold">Baltimore Firefighters Widows & Orphans Fund</span>.
+            Come for the game, stay for the food. Prices roughly half of what you'd pay inside the stadium.
           </p>
         </div>
       </div>

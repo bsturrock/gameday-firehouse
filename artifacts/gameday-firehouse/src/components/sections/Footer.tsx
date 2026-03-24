@@ -17,7 +17,6 @@ export function Footer() {
             </div>
             <p className="text-muted-foreground font-medium pr-4">
               Baltimore's home for sports, cold beer, and the best tailgate parties in the city.
-              Run by Baltimore Firefighters Local 734.
             </p>
             <div className="flex gap-4">
               <a href="https://www.facebook.com/GamedayFirehouse/" target="_blank" rel="noopener noreferrer"
@@ -85,7 +84,6 @@ export function Footer() {
                 { label: 'Menu', href: '#menu' },
                 { label: 'About Us', href: '#about' },
                 { label: 'Contact', href: '#contact' },
-                { label: 'Widows & Orphans Fund', href: 'https://www.facebook.com/GamedayFirehouse/' },
               ].map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="text-muted-foreground font-medium hover:text-primary transition-colors flex items-center gap-2">
@@ -99,17 +97,8 @@ export function Footer() {
 
         </div>
 
-        {/* Charitable Mission Banner */}
-        <div className="mb-8 p-4 rounded-xl bg-primary/10 border border-primary/20 text-center">
-          <p className="text-muted-foreground font-medium text-sm">
-            All tips and profits support the{" "}
-            <span className="text-primary font-bold">Baltimore Firefighters Widows & Orphans Fund</span>
-            {" "}— honoring the families of those who gave everything for Baltimore.
-          </p>
-        </div>
-
         <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground/60 font-medium">
-          <p>&copy; {new Date().getFullYear()} Gameday Firehouse — Baltimore Firefighters Local 734. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Gameday Firehouse. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
