@@ -9,9 +9,18 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden bg-background">
-      {/* YouTube Video Background */}
+      {/* Background layers */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+        {/* Static photo — always shown, acts as base and mobile background */}
+        <img
+          src={`${import.meta.env.BASE_URL}images/bar-atmosphere.png`}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-60"
+        />
+
+        {/* YouTube iframe — desktop only, plays over the photo when available */}
+        <div className="hidden md:block absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
           <iframe
             src="https://www.youtube.com/embed/qiI-da7aR3A?autoplay=1&mute=1&loop=1&playlist=qiI-da7aR3A&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
             allow="autoplay; encrypted-media"
@@ -28,6 +37,7 @@ export function Hero() {
             title="Gameday Firehouse background"
           />
         </div>
+
         {/* Overlays to darken and add brand feel */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80"></div>
