@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 
 const highlights = [
-  { label: "Opens 4 Hours Before Kickoff", sub: "Every Ravens & Orioles home game" },
+  { label: "Opens Before Kickoff", sub: "Every Ravens & Orioles home game" },
   { label: "Official Team Partner", sub: "Baltimore Ravens & Orioles" },
   { label: "No Cover Charge", sub: "Ever" },
   { label: "1202 Ridgely St", sub: "Steps from both stadiums" },
