@@ -5,35 +5,26 @@ import { Flame } from "lucide-react"
 type MenuCategory = 'tailgate' | 'halftime'
 
 const categories: { id: MenuCategory; label: string; note: string }[] = [
-  { id: 'tailgate', label: 'Tailgate Menu', note: 'Available before the game' },
-  { id: 'halftime', label: 'Halftime Menu', note: 'Served from halftime on, inside at the bar' },
+  { id: 'tailgate', label: 'Tailgate Menu', note: 'Available outside before the game' },
+  { id: 'halftime', label: 'Halftime Menu', note: 'Served inside at the bar' },
 ]
 
 type MenuItem = { name: string; desc: string; price: string }
 
 const menuData: Record<MenuCategory, MenuItem[]> = {
   tailgate: [
-    { name: "Pit Beef Sandwich", desc: "Tender, juicy pit beef hot off the pit.", price: "$7" },
-    { name: "Pit Ham Sandwich", desc: "Hot off the pit.", price: "Ask" },
-    { name: "Pit Turkey Sandwich", desc: "Fresh turkey with seasoning, straight from the pit.", price: "Ask" },
-    { name: "Jumbo Hot Dog", desc: "1/4 lb jumbo hot dog. Add kraut — same price.", price: "$4" },
-    { name: "Sausage", desc: "Fresh sausage, game day staple.", price: "Ask" },
-    { name: "Wings", desc: "Choice of sauce: BBQ, Nude, Old Bay, Honey Mustard, Tangy Carolina, Buffalo, or Inferno. Served with ranch or blue cheese.", price: "$8" },
-    { name: "Mozzarella Sticks", desc: "Served with marinara sauce.", price: "$6" },
-    { name: "Loaded Potato", desc: "Topped with cheese, bacon, and sour cream.", price: "$5" },
-    { name: "Loaded Nachos", desc: "Cheese, sour cream, and jalapeños.", price: "$6" },
-    { name: "Firehouse Fries", desc: "Topped with cheese, bacon, and sour cream.", price: "$5" },
-    { name: "Maryland Crab Soup", desc: "Homemade with crab meat — a secret recipe that keeps fans coming back.", price: "$5" },
-    { name: "Firehouse Chili", desc: "Spicy homemade chili, perfect for cold game days.", price: "$4" },
+    { name: "Pit Beef", desc: "Hot off the pit, tender beef.", price: "$7" },
+    { name: "Pit Turkey", desc: "Hot off the pit, fresh turkey with seasoning.", price: "$7" },
+    { name: "Hot Dogs", desc: "1/4 lb. jumbo hot dog, served with optional kraut.", price: "$4" },
+    { name: "Maryland Crab Soup", desc: "Homemade crab soup loaded with crab meat, no you can't have the recipe!", price: "$5" },
+    { name: "Firehouse Chili", desc: "Spicy homemade firehouse chili. This will keep you warm.", price: "$4" },
   ],
   halftime: [
-    { name: "Wings", desc: "Choice of sauce: BBQ, Nude, Old Bay, Honey Mustard, Tangy Carolina, Buffalo, or Inferno. Served with ranch or blue cheese.", price: "$8" },
+    { name: "Firehouse Wings", desc: "BBQ, nude, old bay, honey mustard, tangy carolina, buffalo, inferno. Served with ranch or blue cheese.", price: "$8" },
+    { name: "Chicken Tenders", desc: "BBQ, honey mustard, inferno, buffalo, tangy carolina.", price: "$7" },
+    { name: "Loaded Nachos", desc: "Loaded with cheese, sour cream and jalapeños.", price: "$6" },
     { name: "Mozzarella Sticks", desc: "Served with marinara sauce.", price: "$6" },
-    { name: "Loaded Potato", desc: "Topped with cheese, bacon, and sour cream.", price: "$5" },
-    { name: "Loaded Nachos", desc: "Cheese, sour cream, and jalapeños.", price: "$6" },
-    { name: "Firehouse Fries", desc: "Topped with cheese, bacon, and sour cream.", price: "$5" },
-    { name: "Maryland Crab Soup", desc: "Homemade with crab meat — a secret recipe that keeps fans coming back.", price: "$5" },
-    { name: "Firehouse Chili", desc: "Spicy homemade chili, perfect for cold game days.", price: "$4" },
+    { name: "Firehouse Fries", desc: "Loaded with cheese, bacon and sour cream.", price: "$5" },
   ],
 }
 
@@ -56,8 +47,7 @@ export function Menu() {
             The <span className="text-primary">Firehouse Menu</span>
           </h3>
           <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
-            Real food at prices you won't find inside the stadium.
-            Run by Baltimore Firefighters who know how to feed a crowd.
+            Real food at real prices. No tickets required.
           </p>
         </div>
 
@@ -96,7 +86,7 @@ export function Menu() {
                   {item.name}
                   {index === 0 && <Flame className="w-5 h-5 text-primary" />}
                 </h4>
-                <span className={`text-xl font-bold shrink-0 ${item.price === 'Ask' ? 'text-muted-foreground' : 'text-primary'}`}>
+                <span className="text-xl font-bold shrink-0 text-primary">
                   {item.price}
                 </span>
               </div>

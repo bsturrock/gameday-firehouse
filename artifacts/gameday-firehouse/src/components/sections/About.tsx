@@ -1,14 +1,14 @@
 import { motion } from "framer-motion"
-import { Shield, Beer, Flame, MapPin } from "lucide-react"
+import { MapPin } from "lucide-react"
+
+const highlights = [
+  { label: "Opens 4 Hours Before Kickoff", sub: "Every Ravens & Orioles home game" },
+  { label: "Official Team Partner", sub: "Baltimore Ravens & Orioles" },
+  { label: "No Cover Charge", sub: "Ever" },
+  { label: "1202 Ridgely St", sub: "Steps from both stadiums" },
+]
 
 export function About() {
-  const stats = [
-    { icon: <Beer className="w-8 h-8" />, value: "$3", label: "Cold Beers" },
-    { icon: <Shield className="w-8 h-8" />, value: "2", label: "Official Team Partnerships" },
-    { icon: <Flame className="w-8 h-8" />, value: "~½", label: "Stadium Prices" },
-    { icon: <MapPin className="w-8 h-8" />, value: "2 Blocks", label: "From the Stadiums" },
-  ]
-
   return (
     <section id="about" className="py-24 relative bg-card/50 overflow-hidden">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_top_right,rgba(255,85,0,0.05),transparent_50%)]"></div>
@@ -85,22 +85,19 @@ export function About() {
 
         </div>
 
-        {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
-          {stats.map((stat, index) => (
+        {/* Highlights strip */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px mt-20 rounded-2xl overflow-hidden border border-border bg-border">
+          {highlights.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 + (index * 0.1) }}
-              className="flex flex-col items-center text-center p-6 rounded-xl bg-background border border-border hover:border-primary/50 transition-colors"
+              transition={{ delay: 0.1 + index * 0.08 }}
+              className="bg-card px-6 py-8 flex flex-col items-center text-center hover:bg-card/80 transition-colors"
             >
-              <div className="text-primary mb-4 p-3 bg-primary/10 rounded-full">
-                {stat.icon}
-              </div>
-              <h4 className="text-4xl font-display font-bold text-white mb-2">{stat.value}</h4>
-              <p className="text-sm text-muted-foreground uppercase font-semibold tracking-wider">{stat.label}</p>
+              <p className="text-white font-display font-bold text-lg leading-tight mb-1">{item.label}</p>
+              <p className="text-muted-foreground text-sm font-medium">{item.sub}</p>
             </motion.div>
           ))}
         </div>
