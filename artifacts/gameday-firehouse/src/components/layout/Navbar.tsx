@@ -84,7 +84,7 @@ export function Navbar() {
             ))}
             <Button 
               variant="default" 
-              className="ml-4 bg-primary hover:bg-primary/90 text-white shadow-[0_0_15px_rgba(255,85,0,0.3)]"
+              className="ml-4 bg-primary hover:bg-primary/90 text-white text-base font-bold shadow-[0_0_15px_rgba(255,85,0,0.3)]"
               onClick={() => handleNavClick('#contact')}
             >
               Get Directions

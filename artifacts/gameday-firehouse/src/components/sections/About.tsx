@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-import { MapPin } from "lucide-react"
 
 const highlights = [
   { label: "Opens 4 Hours Before Kickoff", sub: "Every Ravens & Orioles home game" },
@@ -68,16 +67,6 @@ export function About() {
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
 
-              {/* Floating Badge */}
-              <div className="absolute -bottom-6 -left-6 bg-card border border-border p-6 rounded-xl shadow-xl z-20 hidden md:flex md:flex-col md:items-center md:justify-center md:text-center gap-3">
-                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary">
-                  <MapPin className="w-8 h-8" />
-                </div>
-                <div>
-                  <p className="font-display text-2xl font-bold uppercase text-white">Steps From</p>
-                  <p className="text-muted-foreground font-medium">Both Stadiums</p>
-                </div>
-              </div>
             </div>
           </motion.div>
 
@@ -94,8 +83,8 @@ export function About() {
               transition={{ delay: 0.1 + index * 0.08 }}
               className="bg-card px-6 py-8 flex flex-col items-center text-center hover:bg-card/80 transition-colors"
             >
-              <p className="text-white font-display font-bold text-lg leading-tight mb-1">{item.label}</p>
-              <p className="text-muted-foreground text-sm font-medium">{item.sub}</p>
+              <p className="text-white font-display font-bold text-xl leading-tight mb-1">{item.label}</p>
+              <p className="text-muted-foreground text-base font-medium">{item.sub}</p>
             </motion.div>
           ))}
         </div>
