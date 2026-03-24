@@ -106,7 +106,7 @@ export function Navbar() {
       <div
         className={cn(
           "md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border shadow-xl transition-all duration-300 overflow-hidden flex flex-col",
-          mobileMenuOpen ? "max-h-[400px] py-4" : "max-h-0"
+          mobileMenuOpen ? "max-h-[500px] py-4" : "max-h-0"
         )}
       >
         {navLinks.map((link) => (
@@ -114,11 +114,19 @@ export function Navbar() {
             key={link.name}
             href={link.href}
             onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
-            className="px-6 py-3 font-display text-xl tracking-wide text-foreground hover:text-primary hover:bg-muted/50 transition-colors border-b border-border/50 last:border-0"
+            className="px-6 py-3 font-display text-xl tracking-wide text-foreground hover:text-primary hover:bg-muted/50 transition-colors border-b border-border/50"
           >
             {link.name}
           </a>
         ))}
+        <div className="px-6 py-4">
+          <Button
+            className="w-full bg-primary hover:bg-primary/90 text-white text-base font-bold shadow-[0_0_15px_rgba(255,85,0,0.3)]"
+            onClick={() => handleNavClick('#contact')}
+          >
+            Get Directions
+          </Button>
+        </div>
       </div>
     </header>
   )

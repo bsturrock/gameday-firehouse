@@ -8,7 +8,7 @@ export function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
+    <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden bg-background">
       {/* YouTube Video Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
@@ -57,8 +57,8 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 border border-primary/30 backdrop-blur-sm mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-sm font-medium tracking-widest uppercase text-primary-foreground/90">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
+            <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-primary-foreground/90 whitespace-nowrap">
               Baltimore's Official Tailgate HQ
             </span>
           </motion.div>

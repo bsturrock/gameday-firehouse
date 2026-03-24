@@ -33,14 +33,14 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-display text-2xl text-white tracking-widest mb-6 relative inline-block after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-1 after:bg-primary">Contact Us</h4>
             <ul className="space-y-4 text-muted-foreground font-medium">
-              <li className="flex items-start gap-3">
+              <li className="flex items-start gap-3 justify-center md:justify-start">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>1202 Ridgely St<br/>Baltimore, MD 21230</span>
               </li>
-              <li className="flex items-center gap-3">
+              <li className="flex items-center gap-3 justify-center md:justify-start">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <span>(410) 234-0734</span>
               </li>
@@ -51,17 +51,17 @@ export function Footer() {
           </div>
 
           {/* Hours */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-display text-2xl text-white tracking-widest mb-6 relative inline-block after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-1 after:bg-primary">Game Day Hours</h4>
             <ul className="space-y-3 text-muted-foreground font-medium">
-              <li className="flex items-start gap-3 pb-2 border-b border-border/50">
+              <li className="flex items-start gap-3 pb-2 border-b border-border/50 justify-center md:justify-start">
                 <Clock className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-semibold">Ravens Home Games</p>
                   <p className="text-sm">Opens 4 hours before kickoff</p>
                 </div>
               </li>
-              <li className="flex items-start gap-3 pb-2 border-b border-border/50">
+              <li className="flex items-start gap-3 pb-2 border-b border-border/50 justify-center md:justify-start">
                 <Clock className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-semibold">Orioles Home Games</p>
@@ -75,7 +75,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-display text-2xl text-white tracking-widest mb-6 relative inline-block after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-1 after:bg-primary">Quick Links</h4>
             <ul className="space-y-2">
               {[
@@ -86,7 +86,7 @@ export function Footer() {
                 { label: 'Contact', href: '#contact' },
               ].map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-muted-foreground font-medium hover:text-primary transition-colors flex items-center gap-2">
+                  <a href={link.href} className="text-muted-foreground font-medium hover:text-primary transition-colors flex items-center gap-2 justify-center md:justify-start">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span>
                     {link.label}
                   </a>
