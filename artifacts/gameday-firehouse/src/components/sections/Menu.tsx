@@ -2,13 +2,11 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Flame } from "lucide-react"
 
-type MenuCategory = 'tailgate' | 'wings' | 'sides' | 'drinks'
+type MenuCategory = 'tailgate' | 'halftime'
 
-const categories: { id: MenuCategory; label: string }[] = [
-  { id: 'tailgate', label: 'From the Pit' },
-  { id: 'wings', label: 'Wings' },
-  { id: 'sides', label: 'Sides & Soups' },
-  { id: 'drinks', label: 'Drinks' },
+const categories: { id: MenuCategory; label: string; note: string }[] = [
+  { id: 'tailgate', label: 'Tailgate Menu', note: 'Available before the game' },
+  { id: 'halftime', label: 'Halftime Menu', note: 'Served from halftime on, inside at the bar' },
 ]
 
 type MenuItem = { name: string; desc: string; price: string }
@@ -20,15 +18,7 @@ const menuData: Record<MenuCategory, MenuItem[]> = {
     { name: "Pit Turkey Sandwich", desc: "Fresh turkey with seasoning, straight from the pit.", price: "Ask" },
     { name: "Jumbo Hot Dog", desc: "1/4 lb jumbo hot dog. Add kraut — same price.", price: "$4" },
     { name: "Sausage", desc: "Fresh sausage, game day staple.", price: "Ask" },
-  ],
-  wings: [
-    {
-      name: "Wings",
-      desc: "Choice of sauce: BBQ, Nude, Old Bay, Honey Mustard, Tangy Carolina, Buffalo, or Inferno. Served with ranch or blue cheese.",
-      price: "$8"
-    },
-  ],
-  sides: [
+    { name: "Wings", desc: "Choice of sauce: BBQ, Nude, Old Bay, Honey Mustard, Tangy Carolina, Buffalo, or Inferno. Served with ranch or blue cheese.", price: "$8" },
     { name: "Mozzarella Sticks", desc: "Served with marinara sauce.", price: "$6" },
     { name: "Loaded Potato", desc: "Topped with cheese, bacon, and sour cream.", price: "$5" },
     { name: "Loaded Nachos", desc: "Cheese, sour cream, and jalapeños.", price: "$6" },
@@ -36,15 +26,21 @@ const menuData: Record<MenuCategory, MenuItem[]> = {
     { name: "Maryland Crab Soup", desc: "Homemade with crab meat — a secret recipe that keeps fans coming back.", price: "$5" },
     { name: "Firehouse Chili", desc: "Spicy homemade chili, perfect for cold game days.", price: "$4" },
   ],
-  drinks: [
-    { name: "Beer", desc: "Cold domestic and imported beer.", price: "$3" },
-    { name: "Shots", desc: "Full bar selection of spirits.", price: "$5" },
-    { name: "Crushes", desc: "The Baltimore classic — orange crush and more.", price: "$7" },
+  halftime: [
+    { name: "Wings", desc: "Choice of sauce: BBQ, Nude, Old Bay, Honey Mustard, Tangy Carolina, Buffalo, or Inferno. Served with ranch or blue cheese.", price: "$8" },
+    { name: "Mozzarella Sticks", desc: "Served with marinara sauce.", price: "$6" },
+    { name: "Loaded Potato", desc: "Topped with cheese, bacon, and sour cream.", price: "$5" },
+    { name: "Loaded Nachos", desc: "Cheese, sour cream, and jalapeños.", price: "$6" },
+    { name: "Firehouse Fries", desc: "Topped with cheese, bacon, and sour cream.", price: "$5" },
+    { name: "Maryland Crab Soup", desc: "Homemade with crab meat — a secret recipe that keeps fans coming back.", price: "$5" },
+    { name: "Firehouse Chili", desc: "Spicy homemade chili, perfect for cold game days.", price: "$4" },
   ],
 }
 
 export function Menu() {
   const [activeCategory, setActiveCategory] = useState<MenuCategory>('tailgate')
+
+  const active = categories.find(c => c.id === activeCategory)!
 
   return (
     <section id="menu" className="py-24 relative bg-background border-y border-border">
@@ -65,7 +61,7 @@ export function Menu() {
         </div>
 
         {/* Category Toggles */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-4">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -81,6 +77,9 @@ export function Menu() {
           ))}
         </div>
 
+        {/* Active tab note */}
+        <p className="text-center text-muted-foreground text-sm mb-10 italic">{active.note}</p>
+
         {/* Menu Items */}
         <div className="max-w-3xl mx-auto space-y-0">
           {menuData[activeCategory].map((item, index) => (
@@ -88,13 +87,13 @@ export function Menu() {
               key={`${activeCategory}-${index}`}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.25, delay: index * 0.06 }}
+              transition={{ duration: 0.25, delay: index * 0.05 }}
               className="group border-b border-border/60 py-6 last:border-0"
             >
               <div className="flex justify-between items-baseline gap-4 mb-1.5">
                 <h4 className="text-2xl font-display font-bold text-white group-hover:text-primary transition-colors flex items-center gap-2">
                   {item.name}
-                  {index === 0 && activeCategory !== 'drinks' && <Flame className="w-5 h-5 text-primary" />}
+                  {index === 0 && <Flame className="w-5 h-5 text-primary" />}
                 </h4>
                 <span className={`text-xl font-bold shrink-0 ${item.price === 'Ask' ? 'text-muted-foreground' : 'text-primary'}`}>
                   {item.price}
