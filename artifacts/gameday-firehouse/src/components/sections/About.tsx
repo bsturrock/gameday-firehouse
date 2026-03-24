@@ -41,7 +41,7 @@ export function About() {
               </p>
               <p>
                 We're the <span className="text-white font-semibold">official tailgate partner of both the Baltimore Ravens and the Baltimore Orioles</span>,
-                with events running 4 hours before every home game.
+                and the premier spot to watch every home game.
               </p>
               <p>
                 Whether you're grabbing a cold one before first pitch or joining hundreds of fans
