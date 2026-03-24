@@ -40,7 +40,8 @@ const menuData: Record<MenuCategory, MenuItem[]> = {
 export function Menu() {
   const [activeCategory, setActiveCategory] = useState<MenuCategory>('tailgate')
 
-  const active = categories.find(c => c.id === activeCategory)!
+  const safeCategory: MenuCategory = activeCategory in menuData ? activeCategory : 'tailgate'
+  const active = categories.find(c => c.id === safeCategory) ?? categories[0]
 
   return (
     <section id="menu" className="py-24 relative bg-background border-y border-border">
@@ -82,9 +83,9 @@ export function Menu() {
 
         {/* Menu Items */}
         <div className="max-w-3xl mx-auto space-y-0">
-          {menuData[activeCategory].map((item, index) => (
+          {menuData[safeCategory].map((item, index) => (
             <motion.div
-              key={`${activeCategory}-${index}`}
+              key={`${safeCategory}-${index}`}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.25, delay: index * 0.05 }}
