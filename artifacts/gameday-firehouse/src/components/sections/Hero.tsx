@@ -11,12 +11,12 @@ export function Hero() {
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden bg-background">
       {/* Background layers */}
       <div className="absolute inset-0 z-0">
-        {/* Static photo — always shown, acts as base and mobile background */}
+        {/* Static photo — mobile only background */}
         <img
           src={`${import.meta.env.BASE_URL}images/bar-atmosphere.png`}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-60"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-60 md:hidden"
         />
 
         {/* YouTube iframe — desktop only, plays over the photo when available */}
