@@ -68,7 +68,7 @@ export function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-10 font-medium">
-            Proud tailgate partners of the <span className="text-[#D2AA4A] font-bold">Baltimore Ravens</span> & <span className="text-[#DF4601] font-bold">Orioles</span>.
+            Proud tailgate partners of the <span className="text-[#9B7FD4] font-bold">Baltimore Ravens</span> & <span className="text-[#DF4601] font-bold">Orioles</span>.
             Cold drinks, hot food, and the best sports atmosphere in the city.
           </p>
 
