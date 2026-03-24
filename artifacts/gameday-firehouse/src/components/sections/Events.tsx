@@ -1,143 +1,161 @@
 import { motion } from "framer-motion"
-import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react"
+import { Calendar, MapPin, Clock, Tv, Heart, Radio } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 
 export function Events() {
-  const upcomingEvents = [
+  const tailgateInfo = [
     {
-      id: 1,
-      title: "Ravens Tailgate vs. Chiefs",
-      date: "Sunday, Sept 17",
-      time: "9:00 AM - 1:00 PM",
-      location: "Gameday Firehouse Lot",
-      type: "ravens",
-      description: "Join 98Rock and WBAL for the ultimate pre-game party. Live broadcast, drink specials, and full firehouse menu.",
-      featured: true
+      icon: <Clock className="w-7 h-7" />,
+      title: "Opens 4 Hours Early",
+      desc: "We open the gates 4 hours before every Ravens home game — and for Orioles home games — so you can settle in, grab a cold one, and get fired up.",
+      color: "ravens"
     },
     {
-      id: 2,
-      title: "Orioles Pre-Game vs. Yankees",
-      date: "Friday, Sept 22",
-      time: "4:00 PM - 7:00 PM",
-      location: "Gameday Firehouse Main Bar",
+      icon: <Tv className="w-7 h-7" />,
+      title: "Watch Inside If You Don't Have Tickets",
+      desc: "No ticket? No problem. Come inside the Firefighters Union Hall and catch every play on our TVs. Full-service bar, full menu, full game day atmosphere.",
+      color: "orioles"
+    },
+    {
+      icon: <Radio className="w-7 h-7" />,
+      title: "105.7 The Fan Post-Game Show",
+      desc: "After every Ravens home game, 105.7 The Fan broadcasts their post-game show live from the Firehouse. The celebration doesn't stop at the final whistle.",
+      color: "ravens"
+    },
+    {
+      icon: <Heart className="w-7 h-7" />,
+      title: "A Cause Worth Cheering For",
+      desc: "Run by Baltimore Firefighters Local 734. Every dollar of tips and profits goes directly to the Baltimore Firefighters Widows & Orphans Fund.",
+      color: "orioles"
+    },
+  ]
+
+  const partnerBadges = [
+    {
+      type: "ravens",
+      team: "Baltimore Ravens",
+      role: "Official Tailgate Partner",
+      stadium: "M&T Bank Stadium",
+      color: "from-[#241773] to-[#241773]/80",
+      textColor: "#D2AA4A",
+    },
+    {
       type: "orioles",
-      description: "$3 Natty Boh drafts, half-price wings, and a short walk to Camden Yards.",
-      featured: false
+      team: "Baltimore Orioles",
+      role: "Official Tailgate Partner",
+      stadium: "Oriole Park at Camden Yards",
+      color: "from-[#DF4601] to-[#DF4601]/80",
+      textColor: "#000000",
     },
-    {
-      id: 3,
-      title: "Ravens Tailgate vs. Steelers",
-      date: "Sunday, Oct 1",
-      time: "10:00 AM - 1:00 PM",
-      location: "Gameday Firehouse Lot",
-      type: "ravens",
-      description: "Division rivalry tailgate. Special guest appearances, live DJ, and the best pit beef in Baltimore.",
-      featured: false
-    }
   ]
 
   return (
     <section id="events" className="py-24 relative bg-background">
-      {/* Decorative gradient */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-      
+
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl"
-          >
-            <h2 className="text-sm font-display tracking-[0.2em] text-primary mb-2 flex items-center gap-2">
-              <span className="w-8 h-[2px] bg-primary"></span>
-              THE LINEUP
-            </h2>
-            <h3 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-wide text-white">
-              Official Tailgate <span className="text-primary">Events</span>
-            </h3>
-            <p className="mt-4 text-muted-foreground text-lg">
-              We are the official tailgate headquarters for Baltimore sports. 
-              Join us before, during, and after the game.
-            </p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <Button variant="outline" className="border-border hover:bg-primary hover:text-white hover:border-primary transition-all">
-              View Full Calendar <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </motion.div>
+
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-sm font-display tracking-[0.2em] text-primary mb-4 flex items-center justify-center gap-2">
+            <span className="w-8 h-[2px] bg-primary"></span>
+            EVERY HOME GAME
+            <span className="w-8 h-[2px] bg-primary"></span>
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-wide text-white">
+            Official Tailgate <span className="text-primary">HQ</span>
+          </h3>
+          <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
+            Baltimore's only official tailgate partner for <strong className="text-[#241773] drop-shadow-[0_0_4px_rgba(210,170,74,0.8)]">both</strong> the Ravens and the Orioles.
+            Steps from both stadiums. Open before, during, and after every home game.
+          </p>
+        </motion.div>
+
+        {/* Official Partner Badges */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
+          {partnerBadges.map((badge, i) => (
+            <motion.div
+              key={badge.team}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+            >
+              <div className={`rounded-2xl overflow-hidden border-2 ${badge.type === 'ravens' ? 'border-[#241773]' : 'border-[#DF4601]'} shadow-lg`}>
+                <div className={`bg-gradient-to-br ${badge.color} p-6 text-center`}>
+                  <p className="text-white/80 text-sm font-display tracking-[0.2em] uppercase mb-1">{badge.role}</p>
+                  <h4 className="text-3xl font-display font-bold text-white">{badge.team}</h4>
+                  <div className="flex items-center justify-center gap-2 mt-3 text-white/70 text-sm">
+                    <MapPin className="w-4 h-4" />
+                    <span>{badge.stadium}</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {upcomingEvents.map((event, index) => (
+        {/* Tailgate Info Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {tailgateInfo.map((item, index) => (
             <motion.div
-              key={event.id}
+              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="h-full"
             >
-              <Card className={`h-full group hover:border-primary/50 transition-colors duration-300 ${event.featured ? 'border-primary/30 bg-card shadow-[0_0_30px_rgba(255,85,0,0.05)]' : ''}`}>
-                <CardContent className="p-0 h-full flex flex-col">
-                  {/* Event Header Banner */}
-                  <div className={`p-4 ${
-                    event.type === 'ravens' ? 'bg-gradient-to-r from-[#241773] to-[#241773]/80' : 
-                    event.type === 'orioles' ? 'bg-gradient-to-r from-[#DF4601] to-[#DF4601]/80' : 
-                    'bg-primary'
+              <Card className="h-full hover:border-primary/50 transition-colors duration-300">
+                <CardContent className="p-6 flex gap-5 h-full">
+                  <div className={`shrink-0 w-14 h-14 rounded-xl flex items-center justify-center ${
+                    item.color === 'ravens'
+                      ? 'bg-[#241773]/20 text-[#D2AA4A]'
+                      : 'bg-[#DF4601]/20 text-[#DF4601]'
                   }`}>
-                    <div className="flex justify-between items-start mb-2">
-                      <Badge variant={event.type as any} className="bg-black/30 border border-white/20 text-white hover:bg-black/40">
-                        {event.type.toUpperCase()}
-                      </Badge>
-                      {event.featured && (
-                        <Badge variant="outline" className="bg-white text-black border-none animate-pulse">
-                          FEATURED
-                        </Badge>
-                      )}
-                    </div>
-                    <h4 className="text-2xl font-display font-bold text-white leading-tight mt-2">
-                      {event.title}
-                    </h4>
+                    {item.icon}
                   </div>
-                  
-                  {/* Event Details */}
-                  <div className="p-6 flex-1 flex flex-col">
-                    <div className="space-y-3 mb-6 text-foreground/80 font-medium">
-                      <div className="flex items-center gap-3">
-                        <Calendar className="w-5 h-5 text-primary shrink-0" />
-                        <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Clock className="w-5 h-5 text-primary shrink-0" />
-                        <span>{event.time}</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <MapPin className="w-5 h-5 text-primary shrink-0" />
-                        <span>{event.location}</span>
-                      </div>
-                    </div>
-                    
-                    <p className="text-muted-foreground text-sm mb-6 mt-auto">
-                      {event.description}
-                    </p>
-                    
-                    <Button variant="secondary" className="w-full mt-auto font-display text-lg tracking-wider">
-                      Event Details
-                    </Button>
+                  <div>
+                    <h4 className="text-xl font-display font-bold text-white mb-2">{item.title}</h4>
+                    <p className="text-muted-foreground font-medium leading-relaxed text-sm">{item.desc}</p>
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </div>
+
+        {/* Radio Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 p-8 rounded-2xl bg-card border border-border"
+        >
+          <p className="text-muted-foreground font-display text-lg tracking-wider uppercase">Radio Partners</p>
+          <div className="flex items-center gap-8 flex-wrap justify-center">
+            <div className="text-center">
+              <p className="text-2xl font-display font-bold text-white">98Rock</p>
+              <p className="text-sm text-muted-foreground">97.9 Baltimore</p>
+            </div>
+            <div className="w-px h-10 bg-border hidden sm:block"></div>
+            <div className="text-center">
+              <p className="text-2xl font-display font-bold text-white">WBAL</p>
+              <p className="text-sm text-muted-foreground">1090 AM / 101.5 FM News Radio</p>
+            </div>
+            <div className="w-px h-10 bg-border hidden sm:block"></div>
+            <div className="text-center">
+              <p className="text-2xl font-display font-bold text-white">105.7 The Fan</p>
+              <p className="text-sm text-muted-foreground">Post-game show after every Ravens home game</p>
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   )
